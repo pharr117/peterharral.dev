@@ -1,0 +1,26 @@
+{
+    "name": "peterharral.dev",
+    "version": "0.1.0",
+    "description": "My personal site",
+    "author": "Peter Harral",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "repository": {
+        "type": "git",
+        "url": "github.com/pharr117/peterharral.dev"
+    },
+    "dependencies": {
+        "next": "12.1.6",
+        "react": "18.1.0",
+        "react-dom": "18.1.0"
+    },
+    "devDependencies": {
+        "eslint": "8.16.0",
+        "eslint-config-next": "12.1.6"
+    }
+}
