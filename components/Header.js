@@ -3,6 +3,8 @@ import React from 'react'
 import { MdMenu, MdMenuOpen } from "react-icons/md";
 import IconButton from './interact/IconButton';
 import Link from './interact/Link';
+import Heading from './display/Heading';
+import Logo from "./display/Logo";
 
 //global header component
 export default function Header() {
@@ -17,6 +19,9 @@ export default function Header() {
 
     return (
         <div className={styles.mainContainer} id="headerMainContainer">
+            <div className={styles.flexLeft} id="headerFlexLeft">
+                <Logo/>
+            </div>
             <div className={styles.flexRight} id="headerFlexRight">
                 <div className={styles.flexItem}>
                     <Link href="/about">About</Link>

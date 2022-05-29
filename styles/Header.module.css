@@ -1,9 +1,19 @@
+.flexLeft {
+    display: flex;
+    align-items:center;
+    justify-content: left;
+    flex-wrap: wrap;
+    padding: 5px;
+    flex: 1;
+}
+
 .flexRight {
     display: flex;
     align-items:center;
     justify-content: right;
     flex-wrap: wrap;
     padding: 5px;
+    flex: 1;
 }
 
 .flexItem {
@@ -12,6 +22,10 @@
 
 .mainContainer {
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     background-color: transparent;
     background-repeat: no-repeat;       

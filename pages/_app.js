@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Peter Harral // Dev</title>
         <meta name="description" content="The personal site of Peter Harral" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/favicon.ico" />
       </Head>
       <Component {...pageProps} />
     </GlobalLayout>
