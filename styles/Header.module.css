@@ -1,0 +1,12 @@
+.mainContainer {
+    width: 100%;
+    position: fixed;
+    background-color: transparent;
+    background-repeat: no-repeat;       
+    padding: 10px 0;
+}
+
+.menuIcon {
+    color: black;
+    font-size: 20px;
+}
