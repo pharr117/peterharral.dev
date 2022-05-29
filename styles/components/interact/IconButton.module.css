@@ -5,4 +5,7 @@
     cursor: pointer;
     overflow: hidden;
     outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -1,0 +1,14 @@
+.linkContainer {
+    text-align: center;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    padding: 5px 5px 5px 5px;
+    border-color: transparent;
+}
+
+
+.link {
+    font-size: 1.3rem;
+    color: inherit;
+    text-decoration: none;
+}

@@ -1,9 +1,20 @@
+.flexRight {
+    display: flex;
+    align-items:center;
+    justify-content: right;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.flexItem {
+    margin: 5px;
+}
+
 .mainContainer {
     width: 100%;
     position: fixed;
     background-color: transparent;
     background-repeat: no-repeat;       
-    padding: 10px 0;
 }
 
 .menuIcon {

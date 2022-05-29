@@ -2,6 +2,7 @@ import styles from '../styles/Header.module.css'
 import React from 'react'
 import { MdMenu, MdMenuOpen } from "react-icons/md";
 import IconButton from './interact/IconButton';
+import Link from './interact/Link';
 
 //global header component
 export default function Header() {
@@ -16,9 +17,22 @@ export default function Header() {
 
     return (
         <div className={styles.mainContainer} id="headerMainContainer">
-            <IconButton onClick={() => {setShowMenu(!showMenu)}} id="mainMenuButton">
-                {icon}
-            </IconButton>
+            <div className={styles.flexRight} id="headerFlexRight">
+                <div className={styles.flexItem}>
+                    <Link href="/about">About</Link>
+                </div>
+                <div className={styles.flexItem}>
+                    <Link href="/current">Current</Link>
+                </div>
+                <div className={styles.flexItem}>
+                    <Link href="/contact">Contact</Link>
+                </div>
+                <div className={styles.flexItem}>
+                    <IconButton onClick={() => {setShowMenu(!showMenu)}} id="mainMenuButton">
+                        {icon}
+                    </IconButton>
+                </div>
+            </div>
         </div>
     );
 }
