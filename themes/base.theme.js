@@ -13,7 +13,6 @@ export const BaseTheme = {
             p: baseTextColor,
         },
         background: {
-            main: "white",
             header: "transparent",
             link: "transparent",
             fancyLink: "transparent"
