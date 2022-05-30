@@ -8,6 +8,7 @@ export default function Link({
     color,
     borderColor,
     backgroundColor,
+    target=null,
     children
 }){
     const colors = useGlobalColors();
@@ -51,7 +52,7 @@ export default function Link({
     return (
         //put className var after
         <button className={className} style={{borderColor: thisBorderColor, backgroundColor: thisBackgroundColor}}>
-            <a href={href} id={id} className={styles.link} style={{color: textColor}}>
+            <a href={href} id={id} className={styles.link} style={{color: textColor}} target={target} rel="noopener noreferrer">
                 {children}
             </a>
         </button>

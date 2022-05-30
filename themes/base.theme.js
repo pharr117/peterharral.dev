@@ -15,11 +15,14 @@ export const BaseTheme = {
         background: {
             header: "white",
             link: "transparent",
-            fancyLink: "transparent"
+            fancyLink: "transparent",
+            badge: "white"
         },
         border: {
             link: null,
-            fancyLink: "rgb(54, 226, 159)"
+            fancyLink: "rgb(54, 226, 159)",
+            roundedImageOuter: "rgb(54, 226, 159)",
+            badge: "rgb(54, 226, 159)"
         },
         buttons: {
             icon: baseTextColor,

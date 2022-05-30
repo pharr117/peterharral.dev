@@ -15,3 +15,11 @@ export const useGlobalColors = () => {
 export const useGlobalTextColors = () => {
   return useGlobalColors()?.text;
 }
+
+export const useGlobalBorderColors = () => {
+  return useGlobalColors()?.border;
+}
+
+export const useGlobalBackgroundColors = () => {
+  return useGlobalColors()?.background;
+}

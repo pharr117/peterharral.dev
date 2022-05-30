@@ -31,7 +31,7 @@ export default function Header({ setHeaderMenuOpen=()=>{} }) {
                             <Link href="/about" id="aboutLink">About</Link>
                         </div>
                         <div className={styles.flexItem}>
-                            <Link fancy href="/ramblings">Resume</Link>
+                            <Link fancy href="/docs/resume.pdf" target="_blank">Resume</Link>
                         </div>
                     </div>
                 </Hidden>

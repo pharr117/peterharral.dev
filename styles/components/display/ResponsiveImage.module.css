@@ -1,0 +1,7 @@
+.outerCir {
+    border-radius: 50%;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 2px;
+    margin: 10px;
+ }

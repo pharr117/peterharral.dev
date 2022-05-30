@@ -42,7 +42,7 @@ export default function HeaderMenu({ setHeaderMenuOpen = () => { } }) {
     let style = {
         width: width,
     }
-    console.log(style);
+
     useEffect(() => {
         document.addEventListener("click", handleClickOutside, false);
         return () => {
@@ -83,7 +83,7 @@ export default function HeaderMenu({ setHeaderMenuOpen = () => { } }) {
                 <Link href="/contact" id="contactLink">Contact</Link>
                 <Link href="/ramblings">Ramblings</Link>
                 <Link href="/about" id="aboutLink">About</Link>
-                <Link fancy href="/ramblings">Resume</Link>
+                <Link fancy href="/docs/resume.pdf" target="_blank">Resume</Link>
             </div>
         </div>
     );
