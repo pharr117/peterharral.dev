@@ -6,8 +6,8 @@ import Hidden from './media/Hidden';
 import HeaderMenu from './interact/HeaderMenu';
 
 //global header component
-export default function Header() {
-    
+export default function Header({ setHeaderMenuOpen=()=>{} }) {
+
 
     return (
         <div className={styles.mainContainer} id="headerMainContainer">
@@ -15,7 +15,7 @@ export default function Header() {
                 <Logo id="headerLogo" />
             </div>
             <div className={styles.flexRight} id="headerFlexRight">
-                <Hidden mdDown>
+                <Hidden lgDown>
                     <div className={styles.flexLeft} id="headerFlexLeftInner">
                         <div className={styles.flexItem}>
                             <Link href="/about" id="aboutLink">About</Link>
@@ -29,12 +29,15 @@ export default function Header() {
                         <div className={styles.flexItem}>
                             <Link href="/ramblings">Ramblings</Link>
                         </div>
+                        <div className={styles.flexItem}>
+                            <Link fancy href="/ramblings">Resume</Link>
+                        </div>
                     </div>
                 </Hidden>
-                <Hidden mdUp>
+                <Hidden lgUp>
                     <div className={styles.flexItem}>
                         <div>
-                            <HeaderMenu/>
+                            <HeaderMenu setHeaderMenuOpen={setHeaderMenuOpen}/>
                         </div>
                     </div>
                 </Hidden>

@@ -1,4 +1,4 @@
-import styles from "../../styles/display/Heading.module.css";
+import styles from "../../styles/components/display/Heading.module.css";
 
 const components = {
     "h1": (children) => ((<h1>{children}</h1>)),

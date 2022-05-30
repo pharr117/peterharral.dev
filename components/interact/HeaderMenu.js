@@ -1,12 +1,12 @@
 import styles from "../../styles/components/interact/HeaderMenu.module.css";
 import { MdMenu, MdMenuOpen } from "react-icons/md";
-import { isSm, isMd } from "../../hooks/media";
+import { isSm } from "../../hooks/media";
 import IconButton from './IconButton';
 import React, { useState, useRef, useEffect } from "react";
 import Link from "./Link";
 
-export default function HeaderMenu() {
-    
+export default function HeaderMenu({ setHeaderMenuOpen=()=>{} }) {
+
     const wrapperRef = useRef(null);
     const [showMenu, setShowMenu] = useState(false);
 
@@ -21,8 +21,8 @@ export default function HeaderMenu() {
 
     let width = "50%";
 
-    if(isSmallScreen){
-        width = "100%";
+    if (isSmallScreen) {
+        width = "75%";
     }
 
     if (!showMenu) {
@@ -43,13 +43,14 @@ export default function HeaderMenu() {
 
     const handleClickOutside = event => {
         if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+            setHeaderMenuOpen(false);
             setShowMenu(false);
         }
     }
 
     return (
         <div id="headerMenuWrapper" ref={wrapperRef}>
-            <IconButton onClick={() => { console.log("Showing menu");setShowMenu(!showMenu) }} id="mainMenuButton">
+            <IconButton onClick={() => { setHeaderMenuOpen(!showMenu); setShowMenu(!showMenu) }} id="mainMenuButton">
                 {icon}
             </IconButton>
             <div className={styles.headerMenuContainer} style={style}>
@@ -57,6 +58,7 @@ export default function HeaderMenu() {
                 <Link href="/current" id="currentLink">Current</Link>
                 <Link href="/contact" id="contactLink">Contact</Link>
                 <Link href="/ramblings">Ramblings</Link>
+                <Link fancy href="/ramblings">Resume</Link>
             </div>
         </div>
     );

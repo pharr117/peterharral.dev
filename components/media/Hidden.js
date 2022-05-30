@@ -1,6 +1,6 @@
 import styles from "../../styles/components/media/Hidden.module.css";
 
-export default function Hidden({ smDown, mdDown, lgDown, xlgDown, mdUp, children }) {
+export default function Hidden({ smDown, mdDown, lgDown, xlgDown, smUp, mdUp, lgUp, xLgUp, children }) {
 
     let className = null;
     if (smDown) {
@@ -11,8 +11,14 @@ export default function Hidden({ smDown, mdDown, lgDown, xlgDown, mdUp, children
         className = styles.hiddenLgDn;
     } else if (xlgDown) {
         className = styles.hiddenXLgDn;
+    } else if (smUp){
+        className = styles.hiddenSmUp;
     } else if (mdUp){
-        className = styles.hiddenMdUp
+        className = styles.hiddenMdUp;
+    }else if (lgUp){
+        className = styles.hiddenLgUp;
+    }else if (xLgUp){
+        className = styles.hiddenXLgUp;
     }
 
     return <div className={className}>{children}</div>;
