@@ -1,0 +1,20 @@
+.headerMenuContainer {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    background-color: white;
+    overflow-x: hidden;
+    padding-top: 20px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.menuIcon {
+    color: black;
+    font-size: 20px;
+}

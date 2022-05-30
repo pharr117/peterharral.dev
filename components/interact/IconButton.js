@@ -6,9 +6,10 @@ export default function IconButton({
     children
 }){
     return (
-        //put className var after
         <button className={styles.iconButton} id={id || null} onClick={onClick}>
-            {children}
+            <div className={styles.imageHolder}>
+                {children}
+            </div>
         </button>
     );
 }

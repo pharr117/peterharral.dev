@@ -9,3 +9,11 @@
     justify-content: center;
     align-items: center;
 }
+
+/* 
+    Prevents pointer events on SVG icons
+    Prevents a bug if icon is swapped out when the icon is clicked
+*/
+.imageHolder{
+    pointer-events: none;
+}

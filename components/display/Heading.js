@@ -10,12 +10,9 @@ const components = {
 }
 
 export default function Heading({children, component="h1"}){
-    let headingComponent = null
-    if (component in components){
-        headingComponent = components[component](children);
-    }else{
-        headingComponent = components["h1"](children);
-    }
-
-    return <div className={styles.heading}>{headingComponent}</div>
+    return (
+        <div className={styles.heading}>
+            {component in components ? components[component](children): components["h1"](children)}
+        </div>
+    );
 }
