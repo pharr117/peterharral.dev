@@ -1,5 +1,5 @@
 import styles from "../../styles/components/display/Heading.module.css";
-import { useGlobalThemeContext } from "../../context/GlobalThemeContext";
+import { useGlobalTextColors } from "../../context/GlobalThemeContext";
 
 const components = {
     "h1": (children, color) => ((<h1 style={{ color: color ? color : null }}>{children}</h1>)),
@@ -12,7 +12,7 @@ const components = {
 
 export default function Heading({ children, component = "h1", color }) {
 
-    const colors = useGlobalThemeContext()?.colors?.text;
+    const colors = useGlobalTextColors();
     let textColor = "black";
     
     //prefer passed in color over theme

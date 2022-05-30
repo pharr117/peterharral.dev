@@ -1,5 +1,5 @@
 import styles from '../../styles/components/interact/Link.module.css';
-import { useGlobalThemeContext } from "../../context/GlobalThemeContext";
+import { useGlobalColors } from "../../context/GlobalThemeContext";
 
 export default function Link({
     id="",
@@ -10,7 +10,7 @@ export default function Link({
     backgroundColor,
     children
 }){
-    const colors = useGlobalThemeContext()?.colors;
+    const colors = useGlobalColors();
     const textColors = colors?.text;
     const borderColors = colors?.border;
     const backgroundColors = colors?.background;

@@ -4,11 +4,11 @@ import Link from './interact/Link';
 import Logo from "./display/Logo";
 import Hidden from './media/Hidden';
 import HeaderMenu from './interact/HeaderMenu';
-import { useGlobalThemeContext } from "../context/GlobalThemeContext";
+import { useGlobalColors } from "../context/GlobalThemeContext";
 
 //global header component
 export default function Header({ setHeaderMenuOpen=()=>{} }) {
-    const colors = useGlobalThemeContext()?.colors;
+    const colors = useGlobalColors();
 
     return (
         <div className={styles.mainContainer} style={{backgroundColor: colors?.background?.header}} id="headerMainContainer">

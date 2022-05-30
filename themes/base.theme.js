@@ -13,13 +13,17 @@ export const BaseTheme = {
             p: baseTextColor,
         },
         background: {
-            header: "transparent",
+            header: "white",
             link: "transparent",
             fancyLink: "transparent"
         },
         border: {
             link: null,
             fancyLink: "rgb(54, 226, 159)"
+        },
+        buttons: {
+            icon: baseTextColor,
+            headerMenu: baseTextColor,
         }
     }
 }

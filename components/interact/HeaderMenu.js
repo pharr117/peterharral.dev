@@ -4,8 +4,10 @@ import { isLgCallback, isSm } from "../../hooks/media";
 import IconButton from './IconButton';
 import React, { useState, useRef, useEffect } from "react";
 import Link from "./Link";
+import { useGlobalColors } from "../../context/GlobalThemeContext";
 
 export default function HeaderMenu({ setHeaderMenuOpen = () => { } }) {
+    const colors = useGlobalColors();
 
     const wrapperRef = useRef(null);
     const [showMenu, setShowMenu] = useState(false);
@@ -38,9 +40,9 @@ export default function HeaderMenu({ setHeaderMenuOpen = () => { } }) {
     }
 
     let style = {
-        width: width
+        width: width,
     }
-
+    console.log(style);
     useEffect(() => {
         document.addEventListener("click", handleClickOutside, false);
         return () => {
@@ -73,7 +75,7 @@ export default function HeaderMenu({ setHeaderMenuOpen = () => { } }) {
 
     return (
         <div id="headerMenuWrapper" ref={wrapperRef}>
-            <IconButton onClick={() => { setHeaderMenuOpen(!showMenu); setShowMenu(!showMenu) }} id="mainMenuButton">
+            <IconButton onClick={() => { setHeaderMenuOpen(!showMenu); setShowMenu(!showMenu) }} id="mainMenuButton" color={colors?.buttons?.headerMenu}>
                 {icon}
             </IconButton>
             <div className={styles.headerMenuContainer} style={style}>

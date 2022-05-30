@@ -7,3 +7,11 @@ export const GlobalThemeContext = createContext(BaseTheme);
 export const useGlobalThemeContext = () => {
   return useContext(GlobalThemeContext);
 };
+
+export const useGlobalColors = () => {
+  return useGlobalThemeContext()?.colors;
+}
+
+export const useGlobalTextColors = () => {
+  return useGlobalColors()?.text;
+}
