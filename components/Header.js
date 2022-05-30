@@ -18,9 +18,6 @@ export default function Header({ setHeaderMenuOpen=()=>{} }) {
                 <Hidden lgDown>
                     <div className={styles.flexLeft} id="headerFlexLeftInner">
                         <div className={styles.flexItem}>
-                            <Link href="/about" id="aboutLink">About</Link>
-                        </div>
-                        <div className={styles.flexItem}>
                             <Link href="/current" id="currentLink">Current</Link>
                         </div>
                         <div className={styles.flexItem}>
@@ -28,6 +25,9 @@ export default function Header({ setHeaderMenuOpen=()=>{} }) {
                         </div>
                         <div className={styles.flexItem}>
                             <Link href="/ramblings">Ramblings</Link>
+                        </div>
+                        <div className={styles.flexItem}>
+                            <Link href="/about" id="aboutLink">About</Link>
                         </div>
                         <div className={styles.flexItem}>
                             <Link fancy href="/ramblings">Resume</Link>

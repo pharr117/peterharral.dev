@@ -1,11 +1,11 @@
 import styles from "../../styles/components/interact/HeaderMenu.module.css";
 import { MdMenu, MdMenuOpen } from "react-icons/md";
-import { isSm } from "../../hooks/media";
+import { isLgCallback, isSm } from "../../hooks/media";
 import IconButton from './IconButton';
 import React, { useState, useRef, useEffect } from "react";
 import Link from "./Link";
 
-export default function HeaderMenu({ setHeaderMenuOpen=()=>{} }) {
+export default function HeaderMenu({ setHeaderMenuOpen = () => { } }) {
 
     const wrapperRef = useRef(null);
     const [showMenu, setShowMenu] = useState(false);
@@ -17,6 +17,14 @@ export default function HeaderMenu({ setHeaderMenuOpen=()=>{} }) {
         icon = <MdMenu className={styles.menuIcon} id="mainMenuButtonIcon" />;
     }
 
+    const handleLargeScreenChange = (matches) => {
+        if (matches && showMenu) {
+            setHeaderMenuOpen(false);
+            setShowMenu(false);
+        }
+    }
+
+    const onLargeScreen = isLgCallback(handleLargeScreenChange);
     const isSmallScreen = isSm();
 
     let width = "50%";
@@ -33,7 +41,6 @@ export default function HeaderMenu({ setHeaderMenuOpen=()=>{} }) {
         width: width
     }
 
-    // below is the same as componentDidMount and componentDidUnmount
     useEffect(() => {
         document.addEventListener("click", handleClickOutside, false);
         return () => {
@@ -41,10 +48,26 @@ export default function HeaderMenu({ setHeaderMenuOpen=()=>{} }) {
         };
     }, []);
 
+
+    useEffect(() => {
+        document.addEventListener("keydown", handleKeyDown, false)
+
+        return () => {
+            document.removeEventListener("keydown", handleKeyDown, false)
+        }
+    }, []);
+
+    const handleKeyDown = event => {
+        if (event.key === "Escape") {
+            setShowMenu(false);
+            setHeaderMenuOpen(false);
+        }
+    }
+
     const handleClickOutside = event => {
         if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
-            setHeaderMenuOpen(false);
             setShowMenu(false);
+            setHeaderMenuOpen(false);
         }
     }
 
@@ -54,10 +77,10 @@ export default function HeaderMenu({ setHeaderMenuOpen=()=>{} }) {
                 {icon}
             </IconButton>
             <div className={styles.headerMenuContainer} style={style}>
-                <Link href="/about" id="aboutLink">About</Link>
                 <Link href="/current" id="currentLink">Current</Link>
                 <Link href="/contact" id="contactLink">Contact</Link>
                 <Link href="/ramblings">Ramblings</Link>
+                <Link href="/about" id="aboutLink">About</Link>
                 <Link fancy href="/ramblings">Resume</Link>
             </div>
         </div>
