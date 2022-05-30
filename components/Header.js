@@ -4,13 +4,14 @@ import Link from './interact/Link';
 import Logo from "./display/Logo";
 import Hidden from './media/Hidden';
 import HeaderMenu from './interact/HeaderMenu';
+import { useGlobalThemeContext } from "../context/GlobalThemeContext";
 
 //global header component
 export default function Header({ setHeaderMenuOpen=()=>{} }) {
-
+    const colors = useGlobalThemeContext()?.colors;
 
     return (
-        <div className={styles.mainContainer} id="headerMainContainer">
+        <div className={styles.mainContainer} style={{backgroundColor: colors?.background?.header}} id="headerMainContainer">
             <div className={styles.flexLeft} id="headerFlexLeftOuter">
                 <Logo id="headerLogo" />
             </div>

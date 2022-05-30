@@ -8,7 +8,7 @@
 
 .fancyLinkContainer {
     text-align: center;
-    border: 2px solid rgb(54, 226, 159);
+    border: 2px solid;
     border-radius: 4px;
     padding: 8px;
     background-color: white;
@@ -16,6 +16,5 @@
 
 .link {
     font-size: 1.2rem;
-    color: inherit;
     text-decoration: none;
 }

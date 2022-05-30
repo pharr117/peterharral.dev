@@ -1,8 +1,10 @@
 import Header from './Header'
 import Footer from './Footer'
-import React, { useState } from "react";
-import styles from "../styles/components/GlobalLayout.module.css";
+import Main from './Main'
+import React, { useState, createContext } from "react";
 import { isLg } from '../hooks/media';
+import { BaseTheme } from "../themes/base.theme.js";
+import { GlobalThemeContext } from '../context/GlobalThemeContext';
 
 export default function GlobalLayout({ children }) {
 
@@ -11,11 +13,11 @@ export default function GlobalLayout({ children }) {
 
   return (
     <React.Fragment>
-      <Header setHeaderMenuOpen={setHeaderMenuOpen} />
-      <main className={headerMenuOpen && isLgScreen ? styles.opaque : null}>
-        {children}
-      </main>
-      <Footer />
+      <GlobalThemeContext.Provider value={BaseTheme}>
+        <Header setHeaderMenuOpen={setHeaderMenuOpen} />
+          <Main headerMenuOpen={headerMenuOpen} isLgScreen={isLgScreen}>{children}</Main>
+        <Footer />
+      </GlobalThemeContext.Provider>
     </React.Fragment>
   )
 }
