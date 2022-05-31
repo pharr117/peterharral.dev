@@ -1,7 +1,8 @@
-import styles from '../../styles/components/interact/Link.module.css';
+import styles from '../../styles/components/interact/InteractiveLink.module.css';
 import { useGlobalColors } from "../../context/GlobalThemeContext";
+import Link from 'next/link';
 
-export default function Link({
+export default function InteractiveLink({
     id="",
     href="/",
     fancy,
@@ -48,13 +49,14 @@ export default function Link({
             thisBackgroundColor = backgroundColors["link"];
         }
     }
-
     return (
-        //put className var after
-        <button className={className} style={{borderColor: thisBorderColor, backgroundColor: thisBackgroundColor}}>
-            <a href={href} id={id} className={styles.link} style={{color: textColor}} target={target} rel="noopener noreferrer">
-                {children}
-            </a>
-        </button>
+        <Link href={href}>
+            <button className={className} style={{borderColor: thisBorderColor, backgroundColor: thisBackgroundColor}}>
+                <a id={id} className={styles.link} style={{color: textColor}} target={target} rel="noopener noreferrer">
+                    {children}
+                </a>
+            </button>
+        </Link>
     );
+    
 }

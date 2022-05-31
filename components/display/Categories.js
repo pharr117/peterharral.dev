@@ -10,7 +10,7 @@ export default function Categories({categories=[]}){
         <div className={styles.container}>
             {categories.map((category) => {
                 let text = `${category.text}${category.number ? ` (${category.number})`: ""}`
-                return <Badge text={text} onClick={() => {onCategoryClick(category.text);}}/>
+                return <Badge text={text} onClick={() => {onCategoryClick(category.text);}} key={text}/>
             })}
         </div>
     )

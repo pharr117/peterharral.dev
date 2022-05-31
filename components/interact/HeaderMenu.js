@@ -3,7 +3,7 @@ import { MdMenu, MdMenuOpen } from "react-icons/md";
 import { isLgCallback, isSm } from "../../hooks/media";
 import IconButton from './IconButton';
 import React, { useState, useRef, useEffect } from "react";
-import Link from "./Link";
+import InteractiveLink from "./InteractiveLink";
 import { useGlobalColors } from "../../context/GlobalThemeContext";
 
 export default function HeaderMenu({ setHeaderMenuOpen = () => { } }) {
@@ -79,11 +79,11 @@ export default function HeaderMenu({ setHeaderMenuOpen = () => { } }) {
                 {icon}
             </IconButton>
             <div className={styles.headerMenuContainer} style={style}>
-                <Link href="/current" id="currentLink">Current</Link>
-                <Link href="/contact" id="contactLink">Contact</Link>
-                <Link href="/ramblings">Ramblings</Link>
-                <Link href="/about" id="aboutLink">About</Link>
-                <Link fancy href="/docs/resume.pdf" target="_blank">Resume</Link>
+                <InteractiveLink href="/current" id="currentLink">Current</InteractiveLink>
+                <InteractiveLink href="/contact" id="contactLink">Contact</InteractiveLink>
+                <InteractiveLink href="/ramblings">Ramblings</InteractiveLink>
+                <InteractiveLink href="/about" id="aboutLink">About</InteractiveLink>
+                <InteractiveLink fancy href="/docs/resume.pdf" target="_blank">Resume</InteractiveLink>
             </div>
         </div>
     );

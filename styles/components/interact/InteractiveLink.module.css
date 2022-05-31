@@ -4,6 +4,7 @@
     background-repeat: no-repeat;
     padding: 5px 5px 5px 5px;
     border-color: transparent;
+    cursor: pointer;
 }
 
 .fancyLinkContainer {
@@ -12,6 +13,7 @@
     border-radius: 4px;
     padding: 8px;
     background-color: white;
+    cursor: pointer;
 }
 
 .link {

@@ -1,6 +1,6 @@
 import styles from '../styles/components/Header.module.css'
 import React from 'react'
-import Link from './interact/Link';
+import InteractiveLink from './interact/InteractiveLink';
 import Logo from "./display/Logo";
 import Hidden from './media/Hidden';
 import HeaderMenu from './interact/HeaderMenu';
@@ -19,19 +19,19 @@ export default function Header({ setHeaderMenuOpen=()=>{} }) {
                 <Hidden lgDown>
                     <div className={styles.flexLeft} id="headerFlexLeftInner">
                         <div className={styles.flexItem}>
-                            <Link href="/current" id="currentLink">Current</Link>
+                            <InteractiveLink href="/current" id="currentLink">Current</InteractiveLink>
                         </div>
                         <div className={styles.flexItem}>
-                            <Link href="/contact" id="contactLink">Contact</Link>
+                            <InteractiveLink href="/contact" id="contactLink">Contact</InteractiveLink>
                         </div>
                         <div className={styles.flexItem}>
-                            <Link href="/ramblings">Ramblings</Link>
+                            <InteractiveLink href="/ramblings">Ramblings</InteractiveLink>
                         </div>
                         <div className={styles.flexItem}>
-                            <Link href="/about" id="aboutLink">About</Link>
+                            <InteractiveLink href="/about" id="aboutLink">About</InteractiveLink>
                         </div>
                         <div className={styles.flexItem}>
-                            <Link fancy href="/docs/resume.pdf" target="_blank">Resume</Link>
+                            <InteractiveLink fancy href="/docs/resume.pdf" target="_blank">Resume</InteractiveLink>
                         </div>
                     </div>
                 </Hidden>
