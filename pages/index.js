@@ -21,7 +21,7 @@ export default function Home() {
 
   let headshot= (
     <React.Fragment>
-      <ResponsiveImage src="/images/headshot1.jpg" />
+      <ResponsiveImage src="/images/headshot.jpg" />
     </React.Fragment>
   )
   if (isLgScreen){

@@ -4,6 +4,7 @@ import Main from './Main'
 import React, { useState, useEffect } from "react";
 import { isLg } from '../hooks/media';
 import { BaseTheme } from "../themes/base.theme.js";
+import { MintTheme } from "../themes/mint.theme.js";
 import { GlobalThemeContext } from '../context/GlobalThemeContext';
 import { GlobalRamblingsContext, getGlobalRamblingsRequest } from '../context/GlobalRamblingsContext';
 
@@ -20,7 +21,7 @@ export default function GlobalLayout({ children }) {
 
   return (
     <React.Fragment>
-      <GlobalThemeContext.Provider value={BaseTheme}>
+      <GlobalThemeContext.Provider value={MintTheme}>
         <GlobalRamblingsContext.Provider value={ramblingsContext}>
           <Header setHeaderMenuOpen={setHeaderMenuOpen} />
           <Main headerMenuOpen={headerMenuOpen} isLgScreen={isLgScreen}>{children}</Main>

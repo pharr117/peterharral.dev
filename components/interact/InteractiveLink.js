@@ -50,13 +50,14 @@ export default function InteractiveLink({
         }
     }
     return (
-        <Link href={href}>
-            <button className={className} style={{borderColor: thisBorderColor, backgroundColor: thisBackgroundColor}}>
-                <a id={id} className={styles.link} style={{color: textColor}} target={target} rel="noopener noreferrer">
-                    {children}
-                </a>
-            </button>
-        </Link>
+        <button className={className} style={{borderColor: thisBorderColor, backgroundColor: thisBackgroundColor}}>
+            <Link href={href}>                
+                    <a id={id} className={styles.link} style={{color: textColor}} target={target} rel="noopener noreferrer">
+                        {children}
+                    </a>
+            </Link>
+        </button>
+
     );
     
 }

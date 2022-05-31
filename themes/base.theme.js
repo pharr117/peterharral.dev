@@ -16,7 +16,9 @@ export const BaseTheme = {
             header: "white",
             link: "transparent",
             fancyLink: "transparent",
-            badge: "white"
+            badge: "white",
+            main: "white",
+            headerMenu: "white",
         },
         border: {
             link: null,

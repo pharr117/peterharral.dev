@@ -41,6 +41,7 @@ export default function HeaderMenu({ setHeaderMenuOpen = () => { } }) {
 
     let style = {
         width: width,
+        backgroundColor: colors?.background?.headerMenu
     }
 
     useEffect(() => {
@@ -74,7 +75,7 @@ export default function HeaderMenu({ setHeaderMenuOpen = () => { } }) {
     }
 
     return (
-        <div id="headerMenuWrapper" ref={wrapperRef}>
+        <div id="headerMenuWrapper">
             <IconButton onClick={() => { setHeaderMenuOpen(!showMenu); setShowMenu(!showMenu) }} id="mainMenuButton" color={colors?.buttons?.headerMenu}>
                 {icon}
             </IconButton>
