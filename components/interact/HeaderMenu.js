@@ -75,7 +75,7 @@ export default function HeaderMenu({ setHeaderMenuOpen = () => { } }) {
     }
 
     return (
-        <div id="headerMenuWrapper">
+        <div id="headerMenuWrapper" ref={wrapperRef}>
             <IconButton onClick={() => { setHeaderMenuOpen(!showMenu); setShowMenu(!showMenu) }} id="mainMenuButton" color={colors?.buttons?.headerMenu}>
                 {icon}
             </IconButton>
