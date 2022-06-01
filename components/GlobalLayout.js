@@ -1,5 +1,4 @@
 import Header from './Header'
-import Footer from './Footer'
 import Main from './Main'
 import React, { useState, useEffect } from "react";
 import { isLg } from '../hooks/media';
@@ -25,7 +24,6 @@ export default function GlobalLayout({ children }) {
         <GlobalRamblingsContext.Provider value={ramblingsContext}>
           <Header setHeaderMenuOpen={setHeaderMenuOpen} />
           <Main headerMenuOpen={headerMenuOpen} isLgScreen={isLgScreen}>{children}</Main>
-          <Footer />
         </GlobalRamblingsContext.Provider>
       </GlobalThemeContext.Provider>
     </React.Fragment>
