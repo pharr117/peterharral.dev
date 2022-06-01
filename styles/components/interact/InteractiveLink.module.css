@@ -19,4 +19,12 @@
 .link {
     font-size: 1.2rem;
     text-decoration: none;
+    -webkit-transition: opacity 0.3s ease;
+    -moz-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+
+.link:hover {
+    opacity: 0.6;
 }

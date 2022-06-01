@@ -1,9 +1,9 @@
 const colorPalette = {
-    light: "#C2D3CD",
+    light: "#c0eddd",
     mediumLight: "#AFBFC0",
     medium: "#9FA4A9",
-    mediumDark: "#847E89",
-    dark: "#3B3335"
+    mediumDark: "#564f5b",
+    dark: "#262324"
 }
 
 export const MintTheme = {
@@ -17,7 +17,7 @@ export const MintTheme = {
             h5: colorPalette.light,
             h6: colorPalette.light,
             p: colorPalette.light,
-            logoMain: colorPalette.dark,
+            logoMain: colorPalette.light,
             logoSecondary: colorPalette.dark
         },
         background: {

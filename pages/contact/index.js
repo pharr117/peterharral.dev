@@ -1,3 +1,8 @@
+import CenterPage from "../../components/layout/pages/CenterPage";
+
 export default function Contact() {
-    return <div></div>
+    return (
+        <CenterPage>
+        </CenterPage>
+    );
 }
