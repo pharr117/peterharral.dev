@@ -11,6 +11,8 @@ export const BaseTheme = {
             h5: baseTextColor,
             h6: baseTextColor,
             p: baseTextColor,
+            logoMain: baseTextColor,
+            logoSecondary: "white"
         },
         background: {
             header: "white",
@@ -19,6 +21,7 @@ export const BaseTheme = {
             badge: "white",
             main: "white",
             headerMenu: "white",
+            logo: "black",
         },
         border: {
             link: null,

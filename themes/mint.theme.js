@@ -17,6 +17,8 @@ export const MintTheme = {
             h5: colorPalette.light,
             h6: colorPalette.light,
             p: colorPalette.light,
+            logoMain: colorPalette.dark,
+            logoSecondary: colorPalette.dark
         },
         background: {
             header: colorPalette.mediumDark,
@@ -24,7 +26,8 @@ export const MintTheme = {
             fancyLink:"transparent",
             badge: colorPalette.mediumDark,
             headerMenu: colorPalette.mediumDark,
-            main: colorPalette.dark
+            main: colorPalette.dark,
+            logo: colorPalette.light,
         },
         border: {
             link: "transparent",
