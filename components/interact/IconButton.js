@@ -6,13 +6,14 @@ export default function IconButton({
     onClick=()=>{},
     id="",
     color,
+    style={},
     children
 }){
     const colors = useGlobalColors();
     const iconColor = color || colors?.buttons?.icon;
     
     return (
-        <button className={styles.iconButton} id={id || null} onClick={onClick}>
+        <button className={styles.iconButton} id={id || null} onClick={onClick} style={style}>
             <IconContext.Provider value={{color: iconColor}}>
                 <div className={styles.imageHolder}>
                     {children}

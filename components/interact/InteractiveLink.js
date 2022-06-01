@@ -10,7 +10,8 @@ export default function InteractiveLink({
     borderColor,
     backgroundColor,
     target=null,
-    children
+    children,
+    onClick=()=>{}
 }){
     const colors = useGlobalColors();
     const textColors = colors?.text;
@@ -50,7 +51,7 @@ export default function InteractiveLink({
         }
     }
     return (
-        <button className={className} style={{borderColor: thisBorderColor, backgroundColor: thisBackgroundColor}}>
+        <button className={className} style={{borderColor: thisBorderColor, backgroundColor: thisBackgroundColor}} onClick={onClick}>
             <Link href={href}>                
                     <a id={id} className={styles.link} style={{color: textColor}} target={target} rel="noopener noreferrer">
                         {children}

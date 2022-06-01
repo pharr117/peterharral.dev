@@ -5,9 +5,8 @@ import React from "react";
 import { isLg } from '../hooks/media';
 import ResponsiveImage from '../components/display/ResponsiveImage';
 
-export default function Home() {
+export default function Home({docsManifest}) {
   const isLgScreen = isLg();
-  
   let greeting = (
     <React.Fragment>
       <Heading>Hello</Heading>
@@ -37,5 +36,16 @@ export default function Home() {
         >
         </TwoColumnPage>
     );
+  }
+}
+
+//could load file at ssr-time for data
+//definitely not slower than the public axios fetch
+export async function getServerSideProps(context) {
+  var data = require("../public/docs-manifest.json");
+  return {
+    props: {
+      docsManifest: data
+    }
   }
 }

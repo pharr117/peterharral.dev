@@ -5,6 +5,7 @@ import IconButton from './IconButton';
 import React, { useState, useRef, useEffect } from "react";
 import InteractiveLink from "./InteractiveLink";
 import { useGlobalColors } from "../../context/GlobalThemeContext";
+import TwoColumnLayout from "../layout/TwoColumnLayout";
 
 export default function HeaderMenu({ setHeaderMenuOpen = () => { } }) {
     const colors = useGlobalColors();
@@ -74,17 +75,34 @@ export default function HeaderMenu({ setHeaderMenuOpen = () => { } }) {
         }
     }
 
+    const onLinkClick = () => {
+        setShowMenu(false);
+        setHeaderMenuOpen(false);
+    }
+
     return (
         <div id="headerMenuWrapper" ref={wrapperRef}>
             <IconButton onClick={() => { setHeaderMenuOpen(!showMenu); setShowMenu(!showMenu) }} id="mainMenuButton" color={colors?.buttons?.headerMenu}>
                 {icon}
             </IconButton>
             <div className={styles.headerMenuContainer} style={style}>
-                <InteractiveLink href="/current" id="currentLink">Current</InteractiveLink>
-                <InteractiveLink href="/contact" id="contactLink">Contact</InteractiveLink>
-                <InteractiveLink href="/ramblings">Ramblings</InteractiveLink>
-                <InteractiveLink href="/about" id="aboutLink">About</InteractiveLink>
-                <InteractiveLink fancy href="/docs/resume.pdf" target="_blank">Resume</InteractiveLink>
+                <TwoColumnLayout 
+                    leftChild={
+                        <React.Fragment>
+                            <InteractiveLink href="/current" id="currentLink" onClick={onLinkClick}>Current</InteractiveLink>
+                            <InteractiveLink href="/contact" id="contactLink"  onClick={onLinkClick}>Contact</InteractiveLink>
+                            <InteractiveLink href="/ramblings"  onClick={onLinkClick}>Ramblings</InteractiveLink>
+                            <InteractiveLink href="/about" id="aboutLink"  onClick={onLinkClick}>About</InteractiveLink>
+                            <InteractiveLink fancy href="/docs/resume.pdf" target="_blank" onClick={onLinkClick}>Resume</InteractiveLink>
+                        </React.Fragment>
+                    } 
+                    rightChild={<React.Fragment>
+                        <IconButton onClick={() => { setHeaderMenuOpen(!showMenu); setShowMenu(!showMenu) }} style={{display: !showMenu? "none": null}} id="mainMenuButton" color={colors?.buttons?.headerMenu}>
+                            {icon}
+                        </IconButton>
+                    </React.Fragment>}
+                    rightAlign={"flex-end"}
+                />
             </div>
         </div>
     );
