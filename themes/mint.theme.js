@@ -3,13 +3,15 @@ const colorPalette = {
     mediumLight: "#AFBFC0",
     medium: "#9FA4A9",
     mediumDark: "#564f5b",
-    dark: "#262324"
+    dark: "#262324",
+    black: "#000000"
 }
 
 export const MintTheme = {
     colors: {
         text: {
             link: colorPalette.light,
+            altLink: colorPalette.dark,
             h1: colorPalette.light,
             h2: colorPalette.light,
             h3: colorPalette.light,
@@ -21,12 +23,12 @@ export const MintTheme = {
             logoSecondary: colorPalette.dark
         },
         background: {
-            header: colorPalette.mediumDark,
+            header: colorPalette.black,
             link: "transparent",
-            fancyLink:"transparent",
+            fancyLink: colorPalette.black,
             badge: colorPalette.mediumDark,
             headerMenu: colorPalette.mediumDark,
-            main: colorPalette.dark,
+            main: colorPalette.black,
             logo: colorPalette.light,
         },
         border: {

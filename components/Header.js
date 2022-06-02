@@ -5,6 +5,7 @@ import Logo from "./display/Logo";
 import Hidden from './media/Hidden';
 import HeaderMenu from './interact/HeaderMenu';
 import { useGlobalColors } from "../context/GlobalThemeContext";
+import FancyLink from './interact/FancyLink';
 
 //global header component
 export default function Header({ setHeaderMenuOpen=()=>{} }) {
@@ -31,7 +32,7 @@ export default function Header({ setHeaderMenuOpen=()=>{} }) {
                             <InteractiveLink href="/about" id="aboutLink">About</InteractiveLink>
                         </div>
                         <div className={styles.flexItem}>
-                            <InteractiveLink fancy href="/docs/resume.pdf" target="_blank">Resume</InteractiveLink>
+                            <FancyLink href="/docs/resume.pdf" target="_blank" text="Resume"/>
                         </div>
                     </div>
                 </Hidden>

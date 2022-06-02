@@ -20,7 +20,7 @@ export default function GlobalLayout({ children }) {
 
   return (
     <React.Fragment>
-      <GlobalThemeContext.Provider value={MintTheme}>
+      <GlobalThemeContext.Provider value={BaseTheme}>
         <GlobalRamblingsContext.Provider value={ramblingsContext}>
           <Header setHeaderMenuOpen={setHeaderMenuOpen} />
           <Main headerMenuOpen={headerMenuOpen} isLgScreen={isLgScreen}>{children}</Main>

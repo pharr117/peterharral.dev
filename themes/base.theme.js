@@ -17,7 +17,7 @@ export const BaseTheme = {
         background: {
             header: "white",
             link: "transparent",
-            fancyLink: "transparent",
+            fancyLink: "white",
             badge: "white",
             main: "white",
             headerMenu: "white",
@@ -25,7 +25,7 @@ export const BaseTheme = {
         },
         border: {
             link: null,
-            fancyLink: "rgb(54, 226, 159)",
+            fancyLink: baseTextColor,
             roundedImageOuter: "rgb(54, 226, 159)",
             badge: "rgb(54, 226, 159)"
         },

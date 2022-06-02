@@ -6,6 +6,7 @@ import React, { useState, useRef, useEffect } from "react";
 import InteractiveLink from "./InteractiveLink";
 import { useGlobalColors } from "../../context/GlobalThemeContext";
 import TwoColumnLayout from "../layout/TwoColumnLayout";
+import FancyLink from "./FancyLink";
 
 export default function HeaderMenu({ setHeaderMenuOpen = () => { } }) {
     const colors = useGlobalColors();
@@ -30,7 +31,7 @@ export default function HeaderMenu({ setHeaderMenuOpen = () => { } }) {
     const onLargeScreen = isLgCallback(handleLargeScreenChange);
     const isSmallScreen = isSm();
 
-    let width = "50%";
+    let width = "40%";
 
     if (isSmallScreen) {
         width = "75%";
@@ -93,7 +94,7 @@ export default function HeaderMenu({ setHeaderMenuOpen = () => { } }) {
                             <InteractiveLink href="/contact" id="contactLink"  onClick={onLinkClick}>Contact</InteractiveLink>
                             <InteractiveLink href="/ramblings"  onClick={onLinkClick}>Ramblings</InteractiveLink>
                             <InteractiveLink href="/about" id="aboutLink"  onClick={onLinkClick}>About</InteractiveLink>
-                            <InteractiveLink fancy href="/docs/resume.pdf" target="_blank" onClick={onLinkClick}>Resume</InteractiveLink>
+                            <FancyLink href="/docs/resume.pdf" target="_blank" onClick={onLinkClick} text="Resume"/>
                         </React.Fragment>
                     } 
                     rightChild={<React.Fragment>
@@ -102,6 +103,7 @@ export default function HeaderMenu({ setHeaderMenuOpen = () => { } }) {
                         </IconButton>
                     </React.Fragment>}
                     rightAlign={"flex-end"}
+                    leftAlign={"center"}
                 />
             </div>
         </div>
