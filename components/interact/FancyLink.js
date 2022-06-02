@@ -5,6 +5,29 @@ import React from "react";
 
 const validSizes = ["sm", "md", "lg", "xlg"];
 
+const sizeValues = {
+    "sm": {
+        font: "1rem",
+        margin: "20px",
+        height: "35px",
+    },
+    "md": {
+        font: "1.2rem",
+        margin: "25px",
+        height: "40px",
+    },
+    "lg": {
+        font: "1.5rem",
+        margin: "30px",
+        height: "45px",
+    },
+    "xlg": {
+        font: "2rem",
+        margin: "35px",
+        height: "50px",
+    }
+};
+
 export default function FancyLink({
     id = "",
     target="",
@@ -25,6 +48,8 @@ export default function FancyLink({
 
     size = validSizes.indexOf(size) !== -1 ? size : "md";
     
+    let thisSize = sizeValues[size];
+    
     return (
         <React.Fragment>
             <style jsx>{`
@@ -32,11 +57,9 @@ export default function FancyLink({
                     color: ${textColor};
                     background: ${thisBackgroundColor};
                     #make this a var
-                    font-size: 1.2rem;
-
-                    height: 40px;
+                    font-size: ${thisSize.font};
+                    height:  ${thisSize.height};
                     border: 2px solid;
-                    font-size: 20px;
                     cursor: pointer;
                     -webkit-tap-highlight-color: transparent;
                     display: flex;
@@ -51,10 +74,11 @@ export default function FancyLink({
                     background: ${thisBackgroundColor};
                     z-index: -1;
                     transition: 0.5s;
+                    font-size: ${thisSize.font};
                     content: '';
                 }
                 div::before {
-                    height: 40px;
+                    height: ${thisSize.height};
                     width: 90%;
                 }
                 
@@ -69,11 +93,11 @@ export default function FancyLink({
                     height: 0%;
                 }
                 div>span{
-                    margin: 25px;
+                    margin: ${thisSize.margin};
                 }
             `}</style>
             <div className={styles.link} style={{ borderColor: thisBorderColor }} id={id}>
-                <span className={styles.span}>
+                <span className={styles.span} style={{fontSize: thisSize.font}}>
                     <Link href={href}><a className={styles.href} target={target} rel="noopener noreferrer"  onClick={onClick}>{text}</a></Link>
                 </span>
             </div>

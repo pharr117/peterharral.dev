@@ -5,7 +5,6 @@ import Link from 'next/link';
 export default function InteractiveLink({
     id="",
     href="/",
-    fancy,
     color,
     borderColor,
     backgroundColor,
@@ -14,33 +13,10 @@ export default function InteractiveLink({
     onClick=()=>{}
 }){
     const colors = useGlobalColors();
-    const textColors = colors?.text;
-    const borderColors = colors?.border;
-    const backgroundColors = colors?.background;
+    const textColor = color ? color : colors?.text?.link ? colors.text.link : "black";
+    const thisBorderColor = borderColor ? borderColor : colors?.border?.link ? colors.border.link : null;
+    const thisBackgroundColor = backgroundColor ? backgroundColor : colors?.background?.link ? colors.background.link : null;
 
-    //prefer passed in color over theme
-    let textColor = "black";
-    if (color){
-        textColor = color;
-    }else if (textColors && "link" in textColors){
-        textColor = textColors["link"];
-    }
-
-    let thisBorderColor = null;
-    if (borderColor){
-        thisBorderColor = borderColor;
-    }else if(borderColors && "link" in borderColors){
-        thisBorderColor = borderColors["link"];
-    }
-
-    let thisBackgroundColor=null;
-    if (backgroundColor){
-        thisBackgroundColor = borderColor;
-    }else if(backgroundColors){
-        if("link" in backgroundColors){
-            thisBackgroundColor = backgroundColors["link"];
-        }
-    }
     return (
         <button className={styles.linkContainer} style={{borderColor: thisBorderColor, backgroundColor: thisBackgroundColor}} onClick={onClick}>
             <Link href={href}>                

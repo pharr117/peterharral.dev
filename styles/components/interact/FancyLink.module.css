@@ -9,6 +9,7 @@
 
 .href {
     font-size: inherit;
+    font-weight: 600;
     text-decoration: none;
     color: inherit;
 }
